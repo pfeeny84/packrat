@@ -3,7 +3,8 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-import userService from '../../utils/userService'
+import userService from '../../utils/userService';
+import HomePage from '../HomePage/HomePage';
 
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
             <> 
              <Switch>
                 <Route exact path="/">
-                    Home PAGE COMPONENT WOULD GO HEREE
+                    <HomePage />
                 </Route>
             </Switch>
             </>

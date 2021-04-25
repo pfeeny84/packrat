@@ -5,6 +5,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import HomePage from '../HomePage/HomePage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 
 
 function App() {
@@ -35,7 +36,10 @@ function App() {
             <> 
              <Switch>
                 <Route exact path="/">
-                    <HomePage />
+                    <HomePage user={user} handleLogout={handleLogout} />
+                </Route>
+                <Route path="/:username">
+                  <ProfilePage user={user} handleLogout={handleLogout}/>
                 </Route>
             </Switch>
             </>

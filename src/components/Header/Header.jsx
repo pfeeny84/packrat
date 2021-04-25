@@ -6,13 +6,16 @@ import { FaGuitar } from 'react-icons/fa';
 
 export default function PageHeader({user, handleLogout}){
     return (
-        <Segment clearing>
+        <Segment inverted>
             <Header as='h2' floated='right'>
-                <Link to="/"><FaGuitar /></Link>
-                <Link to='' onClick={handleLogout}>Logout</Link>
+                <Link to="/"><FaGuitar color='white' /></Link>
+                <Link to='' onClick={handleLogout} >Logout</Link>
             </Header>
-            <Header as='h2' floated='left'>
-                <Link to={`/${user.username}`}><Image src={user.photoUrl ? user.photoUrl : "https://react.semantic-ui.com/images/wireframe/square-image.png"} avatar></Image>{user.username}</Link>          
+            <Header  as='h2' floated='left'>
+                <Link  to={`/${user.username}`}><Image src={user.photoUrl ? user.photoUrl : "https://react.semantic-ui.com/images/wireframe/square-image.png"} avatar></Image>{ user.username }</Link>          
+            </Header>
+            <Header as='h1' textAlign='center' color='red' dividing>
+                PackRat
             </Header>
         </Segment>
     )

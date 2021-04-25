@@ -15,6 +15,7 @@ export default function Home({user, handleLogout}){
             <PageHeader user={user} handleLogout={handleLogout}/>
           </Grid.Column>
         </Grid.Row>
+        <h1>Home Page</h1>
         <Grid.Row>
           <Grid.Column style={{ maxWidth: 450 }}>
             {/* <AddPostForm handleAddPost={handleAddPost}/> */}

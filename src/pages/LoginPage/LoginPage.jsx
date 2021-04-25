@@ -43,11 +43,11 @@ export default function LoginPage(props){
         <>
           <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
             <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as='h2' color='teal' textAlign='center'>
+            <Header   as='h2' color='red' textAlign='center'>
             <Image src='https://i.imgur.com/QHYu7Jl.png' /> Log-in to your account
             </Header>
             <Form  autoComplete="off"  onSubmit={handleSubmit}>
-               <Segment stacked>
+               <Segment stacked inverted>
                   <Form.Input
                     type="email"
                    
@@ -66,7 +66,8 @@ export default function LoginPage(props){
                     required
                   />
                 <Button
-                  color='teal'
+                  inverted
+                  color='red'
                   fluid size='large'
                   type="submit"
                   className="btn"
@@ -76,9 +77,9 @@ export default function LoginPage(props){
                 </Button>
               </Segment>
             </Form>
-            <Message>
+            
               New to us? <Link to='/signup'>Sign Up</Link>
-            </Message>
+            
             {error ? <ErrorMessage error={error} /> : null}
             </Grid.Column>
           </Grid>

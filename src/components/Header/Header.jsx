@@ -9,10 +9,10 @@ export default function PageHeader({user, handleLogout}){
         <Segment inverted>
             <Header as='h2' floated='right'>
                 <Link to="/"><FaGuitar color='white' /></Link>
-                <Link to='' onClick={handleLogout} >Logout</Link>
+                <Link style={{color: 'red'}} to='' onClick={handleLogout} >Logout</Link>
             </Header>
             <Header  as='h2' floated='left'>
-                <Link  to={`/${user.username}`}><Image src={user.photoUrl ? user.photoUrl : "https://react.semantic-ui.com/images/wireframe/square-image.png"} avatar></Image>{ user.username }</Link>          
+                <Link style={{color: 'red'}} to={`/${user.username}`}><Image src={user.photoUrl ? user.photoUrl : "https://react.semantic-ui.com/images/wireframe/square-image.png"} avatar></Image>{ user.username.toUpperCase() }</Link>          
             </Header>
             <Header as='h1' textAlign='center' color='red' dividing>
                 PackRat

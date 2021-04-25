@@ -76,7 +76,7 @@ export default function SignUpPage(props){
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
               <Header as='h2' color='teal' textAlign='center'>
-                <Image src='https://i.imgur.com/s4LrnlU.png' /> Sign Up    
+                <Image src='https://i.imgur.com/QHYu7Jl.png' /> Sign Up    
               </Header>            
                 <Form autoComplete="off"  onSubmit={handleSubmit}>
                 <Segment stacked>               
@@ -111,12 +111,13 @@ export default function SignUpPage(props){
                       onChange={handleChange}
                       required
                     />
-                    <Form.TextArea label='bio' placeholder='Tell us more about your dogs...' name="bio" onChange={handleChange}/>
+                    <Form.TextArea label='bio' placeholder='Tell us more about your collection...' name="bio" onChange={handleChange}/>
                     <Form.Field> 
                         <Form.Input
+                          label='Profile Image'
                           type="file"
                           name="photo"
-                          placeholder="upload image"
+                          placeholder="upload profile pic"
                           onChange={handleFileInput}
                         />      
                     </Form.Field>

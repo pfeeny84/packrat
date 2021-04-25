@@ -75,12 +75,12 @@ export default function SignUpPage(props){
         <>
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
-              <Header as='h2' color='teal' textAlign='center'>
+              <Header as='h2' color='red' textAlign='center'>
                 <Image src='https://i.imgur.com/QHYu7Jl.png' /> Sign Up    
               </Header>            
                 <Form autoComplete="off"  onSubmit={handleSubmit}>
-                <Segment stacked>               
-                    <Form.Input                    
+                <Segment stacked inverted>               
+                    <Form.Input                  
                       name="username"
                       placeholder="username"
                       value={state.username}
@@ -111,7 +111,7 @@ export default function SignUpPage(props){
                       onChange={handleChange}
                       required
                     />
-                    <Form.TextArea label='bio' placeholder='Tell us more about your collection...' name="bio" onChange={handleChange}/>
+                    <Form.TextArea label='Bio' placeholder='Tell us more about your collection...' name="bio" onChange={handleChange}/>
                     <Form.Field> 
                         <Form.Input
                           label='Profile Image'
@@ -122,11 +122,12 @@ export default function SignUpPage(props){
                         />      
                     </Form.Field>
                     <Button
+                    color='red'
                       type="submit"
                       className="btn"
                       disabled={invalidForm}
                     >
-                    Signup
+                    SignUp
                   </Button>
                   </Segment>
                   {error ? <ErrorMessage error={error} /> : null}

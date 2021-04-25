@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {  Grid } from 'semantic-ui-react';
 import PageHeader from '../../components/Header/Header';
+import AddPostForm from '../../components/AddPostForm/AddPostForm';
 
 
 
@@ -15,10 +16,12 @@ export default function Home({user, handleLogout}){
             <PageHeader user={user} handleLogout={handleLogout}/>
           </Grid.Column>
         </Grid.Row>
-        <h1>Home Page</h1>
+        
         <Grid.Row>
           <Grid.Column style={{ maxWidth: 450 }}>
-            {/* <AddPostForm handleAddPost={handleAddPost}/> */}
+            <AddPostForm 
+            // handleAddPost={handleAddPost}
+            />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>

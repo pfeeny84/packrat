@@ -5,7 +5,7 @@ import { Button, Form, Grid, Header, Image,  Segment } from 'semantic-ui-react'
 export default function AddPostForm(props){
   const [selectedFile, setSelectedFile] = useState('')
   const [state, setState] = useState({
-    caption: ''
+    description: ''
   })
 
   function handleFileInput(e){
@@ -28,7 +28,10 @@ export default function AddPostForm(props){
     // what type of request are we making?
     const formData = new FormData()
     formData.append('photo', selectedFile)
-    formData.append('caption', state.caption)
+    formData.append('description', state.description)
+    formData.append('brand', state.brand)
+    formData.append('model', state.model)
+    formData.append('year', state.year)
     
     // Have to submit the form now! We need a function!
     props.handleAddPost(formData)
@@ -39,7 +42,7 @@ export default function AddPostForm(props){
     
     <Grid textAlign='center' style={{ height: '25vh' }} verticalAlign='middle'>
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Segment inverted>
+        <Segment inverted clearing>
         
             <Form  autoComplete="off" onSubmit={handleSubmit} >
             
@@ -69,8 +72,8 @@ export default function AddPostForm(props){
               />        
               <Form.Input
                   className="form-control"
-                  name="caption"
-                  value={state.caption}
+                  name="description"
+                  value={state.description}
                   placeholder="Description"
                   onChange={handleChange}
                   required

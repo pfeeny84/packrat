@@ -6,7 +6,7 @@ import { FaGuitar } from 'react-icons/fa';
 
 export default function PageHeader({user, handleLogout}){
     return (
-        <Segment inverted>
+        <Segment inverted clearing>
             <Header as='h2' floated='right'>
                 <Link to="/"><FaGuitar color='white' /></Link>
                 <Link style={{color: 'red'}} to='' onClick={handleLogout} >Logout</Link>

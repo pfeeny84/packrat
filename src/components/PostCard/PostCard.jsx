@@ -19,23 +19,25 @@ function PostCard({post, isProfile, addLike, removeLike, user }) {
 
 
   return (
-    <Card key={post._id}>
+   
+    <Card key={post._id} >
      {isProfile ? ''
         :  
           <Card.Content textAlign='left'>
               <Image
                   floated='left'
-                  size='large'
+                  size='huge'
                   avatar
                   src={post.user.photoUrl ? post.user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
               />
-              <Card.Header floated="right">{post.user.username}</Card.Header>
+              <Card.Header  floated="right">{post.user.username}</Card.Header>
           </Card.Content>
       
       }
       <Image src={`${post.photoUrl}`} wrapped ui={false} />
       <Card.Content>
       <Card.Description>
+        Brand: {post.brand}
         {post.description}
       </Card.Description>
       </Card.Content>
@@ -45,6 +47,7 @@ function PostCard({post, isProfile, addLike, removeLike, user }) {
           
       </Card.Content>
     </Card>
+   
   );
 }
 

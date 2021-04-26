@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import './AddPostForm.css'
 
-import { Button, Form, Grid, Header, Image,  Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Divider,  Segment } from 'semantic-ui-react'
 
 export default function AddPostForm(props){
   const [selectedFile, setSelectedFile] = useState('')
@@ -40,9 +41,9 @@ export default function AddPostForm(props){
 
   return (
     
-    <Grid textAlign='center' style={{ height: '25vh' }} verticalAlign='middle'>
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <Segment inverted clearing>
+    <Grid textAlign='center'  verticalAlign='middle' >
+      <Grid.Column style={{ maxWidth: 450 }} >
+        <Segment className='addForm' clearing inverted >
         
             <Form  autoComplete="off" onSubmit={handleSubmit} >
             

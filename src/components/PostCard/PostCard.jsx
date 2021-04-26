@@ -36,7 +36,7 @@ function PostCard({post, isProfile, addLike, removeLike, user }) {
       <Image src={`${post.photoUrl}`} wrapped ui={false} />
       <Card.Content>
       <Card.Description>
-        {post.caption}
+        {post.description}
       </Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={'right'}>

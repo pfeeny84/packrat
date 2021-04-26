@@ -6,7 +6,10 @@ import { Button, Form, Grid, Header, Image, Divider,  Segment } from 'semantic-u
 export default function AddPostForm(props){
   const [selectedFile, setSelectedFile] = useState('')
   const [state, setState] = useState({
-    description: ''
+    description: '',
+    brand: '',
+    model: '',
+    year: ''
   })
 
   function handleFileInput(e){

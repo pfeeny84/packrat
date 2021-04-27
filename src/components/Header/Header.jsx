@@ -7,7 +7,7 @@ import { FaGuitar } from 'react-icons/fa';
 export default function PageHeader({user, handleLogout}){
     return (
         <div className='navbar-fixed-top' >
-        <Segment  clearing inverted >
+        <Segment   inverted >
             <Header as='h2' floated='right'>
                 <Link to="/"><FaGuitar color='crimson' /></Link>
                 <Link style={{color: 'crimson'}} to='' onClick={handleLogout} >Logout</Link>

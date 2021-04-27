@@ -9,7 +9,7 @@ const postSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     brand: String,
     model: String,
-    year: String,
+    year: Number,
     photoUrl: String,
     description: String,
     likes: [likesSchema]

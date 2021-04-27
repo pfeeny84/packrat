@@ -40,11 +40,10 @@ function PostCard({post, isProfile, addLike, removeLike, user }) {
         Model: {post.model}<br/>
         Year: {post.year}<br/>
       </Card.Content>
+      <Card.Content>
       <CardDescription>
         {post.description}
       </CardDescription>
-      <Card.Content>
-
       </Card.Content>
       
       <Card.Content extra textAlign={'right'}>

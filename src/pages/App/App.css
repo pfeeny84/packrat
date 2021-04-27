@@ -41,6 +41,8 @@ body {
   background-image: linear-gradient(to top right, rgba(227, 22, 22, 0.635), rgba(243, 222, 222, 0.793), rgba(21, 21, 231, 0.697));
   background-repeat: no-repeat;
   background-attachment: fixed;
+  
+
 }
 
 .header-text{
@@ -48,3 +50,15 @@ body {
   font-size: 2em;
   color: crimson
 }
+
+/* .navbar-fixed-top{
+
+  position: fixed;
+ 
+right: 0;
+ 
+left: 0;
+ 
+z-index: 999;
+
+} */

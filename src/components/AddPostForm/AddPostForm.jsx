@@ -74,7 +74,7 @@ export default function AddPostForm(props){
                   onChange={handleChange}
                   required
               />        
-              <Form.Input
+              <Form.TextArea
                   className="form-control"
                   name="description"
                   value={state.description}

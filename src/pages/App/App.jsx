@@ -38,7 +38,7 @@ function App() {
                 <Route exact path="/">
                     <HomePage user={user} handleLogout={handleLogout} />
                 </Route>
-                <Route path="/:username">
+                <Route  path="/:username">
                   <ProfilePage user={user} handleLogout={handleLogout}/>
                 </Route>
             </Switch>

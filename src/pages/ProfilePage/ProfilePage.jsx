@@ -6,6 +6,7 @@ import PostFeed from '../../components/PostFeed/PostFeed';
 import PageHeader from '../../components/Header/Header';
 import * as likesApi from '../../utils/likesService';
 import { useLocation } from 'react-router-dom';
+import ProfilePostDisplay from '../../components/ProfilePostDisplay/ProfilePostDisplay';
 
 export default function ProfilePage({ user, handleLogout }) {
 

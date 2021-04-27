@@ -28,6 +28,7 @@ function create(req, res){
                 description: req.body.description, 
                 brand: req.body.brand,
                 model: req.body.model,
+                year: req.body.year,
                 photoUrl: data.Location, 
                 user: req.user
             })

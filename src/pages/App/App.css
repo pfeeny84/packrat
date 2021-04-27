@@ -42,3 +42,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+.header-text{
+  font-family: 'Monoton', cursive;
+  font-size: 2em;
+  color: crimson
+}

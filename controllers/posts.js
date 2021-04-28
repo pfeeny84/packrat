@@ -68,15 +68,11 @@ async function index(req, res){
     }
 }
 
-async function deletePost(req, res){
+async function deletePost(req, res) {
     try {
-        Post.find({'posts._id': req.params.id});
-           
-           // mutating a document
-        // req.params.id is the like id 
-        await post.remove() // after you mutate a document you must save ??????
-        res.json({data: 'post removed'})
-    } catch(err){
-        res.json({error: err})
+        await Post.findByIdAndDelete(req.params.id);
+        res.json({ data: 'post removed' })
+    } catch (err) {
+        res.json({ error: err })
     }
 }

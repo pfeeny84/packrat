@@ -3,7 +3,7 @@ import { Card, Icon, Image, Feed, CardDescription } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import { removePost } from '../../utils/post-api';
 
-function PostCard({post, isProfile, addLike, removeLike, user }) { 
+function PostCard({post, isProfile, addLike, removeLike, user, setPosts, posts }) { 
 
   // as the logged in the user when I add a like I want the heart to turn red
   // find out if the logged in user has liked the card
@@ -56,7 +56,7 @@ function PostCard({post, isProfile, addLike, removeLike, user }) {
           
       </Card.Content>
       <Card.Content extra textAlign={'center'} style={{backgroundColor: "black"}}>
-        <Icon name={'trash'} size='large' color={"red"} onClick={handleDeletePost}/>
+        <Icon name={'trash'} size='large' color={"red"} onClick={() => handleDeletePost(post._id)}/>
       </Card.Content>
     </Card>
    

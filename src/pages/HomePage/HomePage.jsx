@@ -90,6 +90,7 @@ export default function Home({user, handleLogout}){
               isProfile={false} 
               addLike={addLike} 
               removeLike={removeLike}
+              setPosts={setPosts}
               />
           </Grid.Column>
         </Grid.Row>

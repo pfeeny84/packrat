@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Icon, Image, Feed, CardDescription } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
-import { removePost } from '../../utils/post-api';
+import * as postApi from '../../utils/post-api';
+
 
 function PostCard({post, isProfile, addLike, removeLike, user, setPosts, posts }) { 
 
@@ -12,13 +13,21 @@ function PostCard({post, isProfile, addLike, removeLike, user, setPosts, posts }
   // if one of the likes in post.likes is has the same username as are logged in user
   // it will return the index of that particular object in the post.likes array
   // if not it will return -1
-  const  handleDeletePost = () => {
-        removePost(post._id)
-  }
+  
   const clickHandler = likedIndexNumber > - 1 ? () => removeLike(post.likes[likedIndexNumber]._id) : () => addLike(post._id);
   const likeColor = likedIndexNumber > -1 ? 'red' : 'grey';
   // as the logged in the user when I click on the heart and it is red I want 
   // to remove the like and turn heart grey
+
+  async function deletePost(postID){
+    try{
+        await postApi.deletePost(postID)
+        const newPosts = posts.filter(post => post._id !== postID)
+        setPosts(newPosts)
+    }catch(err){
+        console.log(err)
+    }
+}
 
 
   return (
@@ -56,7 +65,7 @@ function PostCard({post, isProfile, addLike, removeLike, user, setPosts, posts }
           
       </Card.Content>
       <Card.Content extra textAlign={'center'} style={{backgroundColor: "black"}}>
-        <Icon name={'trash'} size='large' color={"red"} onClick={() => handleDeletePost(post._id)}/>
+        <Icon name={'trash'} size='large' color={"red"} onClick={() => deletePost(post._id)}/>
       </Card.Content>
     </Card>
    

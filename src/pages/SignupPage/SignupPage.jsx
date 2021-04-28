@@ -76,6 +76,15 @@ export default function SignUpPage(props){
         <>
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
+          <Header className='header-text' as='h1' textAlign='center'>
+                <span className='header-text'>Welcome</span>
+            </Header>
+            <Header className='header-text' as='h1' textAlign='center'>
+                <span className='header-text'>to</span>
+            </Header>
+            <Header className='header-text' as='h1' textAlign='center'>
+                <span className='header-text'>PackRat</span>
+            </Header>
               <Header as='h2' color='red' textAlign='center'>
                 <Image src='https://i.imgur.com/QHYu7Jl.png' /> Sign Up    
               </Header>            

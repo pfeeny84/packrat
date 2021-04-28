@@ -26,10 +26,11 @@ function create(req, res){
             // The data object is the response from aws, 
             // its the callback function to upload
             const post = await Post.create({
-                description: req.body.description, 
+                item: req.body.item,
                 brand: req.body.brand,
                 model: req.body.model,
                 year: req.body.year,
+                description: req.body.description, 
                 photoUrl: data.Location, 
                 user: req.user
             })

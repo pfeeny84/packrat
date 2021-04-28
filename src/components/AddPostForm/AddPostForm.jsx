@@ -32,10 +32,11 @@ export default function AddPostForm(props){
     // what type of request are we making?
     const formData = new FormData()
     formData.append('photo', selectedFile)
-    formData.append('description', state.description)
+    formData.append('item', state.item)
     formData.append('brand', state.brand)
     formData.append('model', state.model)
     formData.append('year', state.year)
+    formData.append('description', state.description)
     
     // Have to submit the form now! We need a function!
     props.handleAddPost(formData)
@@ -50,6 +51,14 @@ export default function AddPostForm(props){
         
             <Form  autoComplete="off" onSubmit={handleSubmit} >
             
+            <Form.Input
+                  className="form-control"
+                  name="item"
+                  value={state.item}
+                  placeholder="Item Type"
+                  onChange={handleChange}
+                  required
+              />  
               <Form.Input
                   className="form-control"
                   name="brand"

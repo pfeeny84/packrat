@@ -39,6 +39,7 @@ function PostCard({post, isProfile, addLike, removeLike, user }) {
       }
       <Image src={`${post.photoUrl}`} wrapped ui={false} />
       <Card.Content>
+        Item: {post.item}<br/>
         Brand: {post.brand}<br/>
         Model: {post.model}<br/>
         Year: {post.year}<br/>

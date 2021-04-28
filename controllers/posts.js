@@ -7,7 +7,8 @@ const BUCKET_NAME = process.env.BUCKET_NAME
 
 module.exports = {
     create,
-    index
+    index,
+    deletePost
 }
 
 
@@ -63,5 +64,18 @@ async function index(req, res){
         res.status(200).json({posts})
     } catch(err){
         res.json(err)
+    }
+}
+
+async function deletePost(req, res){
+    try {
+        Post.find({'posts._id': req.params.id});
+           
+           // mutating a document
+        // req.params.id is the like id 
+        await post.remove() // after you mutate a document you must save ??????
+        res.json({data: 'post removed'})
+    } catch(err){
+        res.json({error: err})
     }
 }

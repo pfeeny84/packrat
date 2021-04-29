@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card , Segment, Divider } from 'semantic-ui-react'
+import { deletePost } from '../../utils/post-api';
 import PostCard from '../PostCard/PostCard';
 
 
-export default function PostFeed({posts, numPhotosCol, isProfile, addLike, removeLike, user, setPosts  }){
+export default function PostFeed({posts, numPhotosCol, isProfile, addLike, removeLike, user, setPosts , deletePost }){
 
     return (
         <>
@@ -21,6 +22,7 @@ export default function PostFeed({posts, numPhotosCol, isProfile, addLike, remov
                             addLike={addLike}  
                             removeLike={removeLike}
                             setPosts={setPosts}
+                            deletePost={deletePost}
                             />
                             
                             

@@ -101,7 +101,6 @@ export default function AddPostForm(props){
               />
               <label>Item Image</label>
               <Form.Input
-                // value={selectedFile}
                 className="form-control"
                 type="file"
                 name="photo"

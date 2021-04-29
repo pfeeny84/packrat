@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { Card, Icon, Image, Feed, CardDescription } from 'semantic-ui-react'
+import { Card, Icon, Image, Feed, CardDescription } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import * as postApi from '../../utils/post-api';
 
 
 
-function PostCard({post, isProfile, addLike, removeLike, user, setPosts, posts }) { 
+
+
+function PostCard({post,isProfile, addLike, removeLike, user, setPosts, posts, deletePost }) { 
 
   // as the logged in the user when I add a like I want the heart to turn red
   // find out if the logged in user has liked the card
@@ -19,19 +20,6 @@ function PostCard({post, isProfile, addLike, removeLike, user, setPosts, posts }
   const likeColor = likedIndexNumber > -1 ? 'red' : 'grey';
   // as the logged in the user when I click on the heart and it is red I want 
   // to remove the like and turn heart grey
-
-  async function deletePost(postID){
-    try{
-        await postApi.deletePost(postID)
-        const newPosts = posts.filter(post => post._id !== postID)
-        setPosts(newPosts)
-    }catch(err){
-        console.log(err)
-    }
-}
-// useEffect(() => {
-//   // getProfile()
-// },[])
 
   return (
    

@@ -4,11 +4,12 @@ import userService from '../../utils/userService';
 import ProfileBio from '../../components/ProfileBio/ProfileBio';
 import PostFeed from '../../components/PostFeed/PostFeed';
 import PageHeader from '../../components/Header/Header';
+import * as postApi from '../../utils/post-api';
 import * as likesApi from '../../utils/likesService';
 import { useLocation } from 'react-router-dom';
 
 
-export default function ProfilePage({ user, handleLogout }) {
+export default function ProfilePage({ user, handleLogout  }) {
 
     const [posts, setPosts] = useState([])
     const [profileUser, setProfileUser] = useState({})
@@ -29,7 +30,7 @@ export default function ProfilePage({ user, handleLogout }) {
         }
       }
   
-      async function removeLike(likeId){
+    async function removeLike(likeId){
         try{  
           const data = await likesApi.removeLike(likeId);
           console.log(data, ' response from removeLike')
@@ -40,7 +41,15 @@ export default function ProfilePage({ user, handleLogout }) {
       }
 
 
-
+    async function deletePost(postID){
+        try{
+            await postApi.deletePost(postID)
+            const newPosts = posts.filter(post => post._id !== postID)
+            setPosts(newPosts)
+        }catch(err){
+            console.log(err)
+        }
+    }
 
     async function getProfile() {
 
@@ -98,7 +107,7 @@ export default function ProfilePage({ user, handleLogout }) {
                     </Grid.Row>
                     <Grid.Row centered>
                         <Grid.Column style={{ maxWidth: 750 }}>
-                            <PostFeed isProfile={true} posts={posts} numPhotosCol={3} user={user} addLike={addLike} removeLike={removeLike}/>
+                            <PostFeed isProfile={true} posts={posts} numPhotosCol={3} user={user} addLike={addLike} removeLike={removeLike} deletePost={deletePost}/>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>

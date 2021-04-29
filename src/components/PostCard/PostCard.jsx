@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, Icon, Image, Feed, CardDescription } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import * as postApi from '../../utils/post-api';
+
 
 
 function PostCard({post, isProfile, addLike, removeLike, user, setPosts, posts }) { 
@@ -28,7 +29,9 @@ function PostCard({post, isProfile, addLike, removeLike, user, setPosts, posts }
         console.log(err)
     }
 }
-
+// useEffect(() => {
+//   // getProfile()
+// },[])
 
   return (
    
@@ -64,9 +67,12 @@ function PostCard({post, isProfile, addLike, removeLike, user, setPosts, posts }
         {post.likes.length} Likes
           
       </Card.Content>
+      { post.user === user._id ?
       <Card.Content extra textAlign={'center'} style={{backgroundColor: "black"}}>
         <Icon name={'trash'} size='large' color={"red"} onClick={() => deletePost(post._id)}/>
       </Card.Content>
+       : ''
+      }
     </Card>
    
   );

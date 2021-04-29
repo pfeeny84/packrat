@@ -2,15 +2,20 @@ import React, { useState } from 'react';
 import './AddPostForm.css'
 
 import { Button, Form, Grid, Header, Image, Divider,  Segment } from 'semantic-ui-react'
+import { FaPhotoVideo } from 'react-icons/fa';
 
 export default function AddPostForm(props){
   const [selectedFile, setSelectedFile] = useState('')
-  const [state, setState] = useState({
+  const initialState = {
     description: '',
+    item: '',
     brand: '',
     model: '',
     year: ''
-  })
+  }
+
+
+  const [state, setState] = useState(initialState)
 
   function handleFileInput(e){
     setSelectedFile(e.target.files[0])
@@ -40,6 +45,9 @@ export default function AddPostForm(props){
     
     // Have to submit the form now! We need a function!
     props.handleAddPost(formData)
+    setState(initialState)
+    
+    
   }
 
 
@@ -93,11 +101,10 @@ export default function AddPostForm(props){
               />
               <label>Item Image</label>
               <Form.Input
-                
+                // value={selectedFile}
                 className="form-control"
                 type="file"
                 name="photo"
-                placeholder="upload image"
                 onChange={handleFileInput}
               />   
               <Button

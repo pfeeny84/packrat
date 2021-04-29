@@ -9,7 +9,7 @@ export default function PostFeed({posts, numPhotosCol, isProfile, addLike, remov
         <>
         <Card.Group itemsPerRow={numPhotosCol} stackable clearing >
            
-                {posts.map((post) => {
+                {posts.reverse().map((post) => {
                 return ( 
                     
                         <PostCard 

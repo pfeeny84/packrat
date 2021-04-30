@@ -53,7 +53,7 @@ export default function AddPostForm(props){
     
     <Grid textAlign='center'  verticalAlign='middle' >
       <Grid.Column style={{ maxWidth: 450 }} >
-        <Segment className='addForm' clearing inverted >
+        <Segment className='addForm' inverted >
         
             <Form  autoComplete="off" onSubmit={handleSubmit} >
             

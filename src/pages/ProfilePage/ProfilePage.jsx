@@ -71,6 +71,7 @@ export default function ProfilePage({ user, handleLogout, handleSignUpOrLogin  }
             setLoading(() => false)
             setPosts(() => [...data.posts])
             setProfileUser(() => data.user)
+            console.log(data.user, 'this is data.user')
         } catch (err) {
             console.log(err)
             setError(err)
@@ -108,9 +109,12 @@ export default function ProfilePage({ user, handleLogout, handleSignUpOrLogin  }
                         </Grid.Column>
                     </Grid.Row>
                         <Grid.Row>
+                        { profileUser._id === user._id ?
                         <Grid.Column>
                             <UpdateProfilePhotoForm handleUpdateProfilePhoto={handleUpdateProfilePhoto}/>
                         </Grid.Column>
+                        : ''
+                        }
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>

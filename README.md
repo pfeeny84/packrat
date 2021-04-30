@@ -11,7 +11,7 @@ PackRat is a user based web app that lets you post images of your music gear col
 - Heroku, AWS
 ### Getting Started
 - [Sign up to start building your collection!](https://pack-rat.herokuapp.com/)
-- [Trello Board](https://trello.com/b/bFHd7chM/showcase-db)
+- [Trello Board](https://trello.com/b/dvQFRrwm/packrat)
 ### Additions I'd like to make
 - The ability to follow other users
 - The ability to organize the posts on the profile page with drag and drop. 
@@ -20,4 +20,4 @@ PackRat is a user based web app that lets you post images of your music gear col
 - The ability to search for items in user's collections and filter the main feed. 
 - Implement multiple collection types.
 - The ability to add custom attributes you want to track to items in the user's collection.
-  
+

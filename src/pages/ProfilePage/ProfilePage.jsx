@@ -7,9 +7,10 @@ import PageHeader from '../../components/Header/Header';
 import * as postApi from '../../utils/post-api';
 import * as likesApi from '../../utils/likesService';
 import { useLocation } from 'react-router-dom';
+import UpdateProfilePhotoForm from '../../components/UpdateProfilePhotoForm/UpdateProfilePhotoForm';
 
 
-export default function ProfilePage({ user, handleLogout  }) {
+export default function ProfilePage({ user, handleLogout, handleSignUpOrLogin  }) {
 
     const [posts, setPosts] = useState([])
     const [profileUser, setProfileUser] = useState({})
@@ -51,6 +52,12 @@ export default function ProfilePage({ user, handleLogout  }) {
         }
     }
 
+    async function handleUpdateProfilePhoto (photo){
+        const updatedUser = await userService.updateProfilePhoto(photo);
+        handleSignUpOrLogin()
+        // console.log(updatedUser)
+      }
+
     async function getProfile() {
 
         try {
@@ -73,10 +80,10 @@ export default function ProfilePage({ user, handleLogout  }) {
 
     useEffect(() => {
         getProfile()
-    },[location.pathname.substring(1)])
+    },[location.pathname.substring(1), user])
 
    
-    
+   
 
    
 
@@ -84,7 +91,7 @@ export default function ProfilePage({ user, handleLogout  }) {
 
         <>
             { loading ?
-                <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle' >
+                <Grid textAlign='right' style={{ height: '100vh' }} verticalAlign='middle' >
                 
                         <Grid.Column style={{ maxWidth: 450}}>
                             
@@ -98,6 +105,11 @@ export default function ProfilePage({ user, handleLogout  }) {
                     <Grid.Row>
                         <Grid.Column>
                             <PageHeader user={user} handleLogout={handleLogout}/>
+                        </Grid.Column>
+                    </Grid.Row>
+                        <Grid.Row>
+                        <Grid.Column>
+                            <UpdateProfilePhotoForm handleUpdateProfilePhoto={handleUpdateProfilePhoto}/>
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>

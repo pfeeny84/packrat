@@ -39,7 +39,7 @@ function App() {
                     <HomePage user={user} handleLogout={handleLogout} />
                 </Route>
                 <Route  path="/:username">
-                  <ProfilePage user={user} handleLogout={handleLogout}/>
+                  <ProfilePage user={user} handleLogout={handleLogout} handleSignUpOrLogin={handleSignUpOrLogin}/>
                 </Route>
             </Switch>
             </>

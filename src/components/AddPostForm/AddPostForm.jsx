@@ -13,9 +13,9 @@ export default function AddPostForm(props){
     model: '',
     year: ''
   }
-
-
   const [state, setState] = useState(initialState)
+
+
 
   function handleFileInput(e){
     setSelectedFile(e.target.files[0])
@@ -46,9 +46,7 @@ export default function AddPostForm(props){
     // Have to submit the form now! We need a function!
     props.handleAddPost(formData)
     setState(initialState)
-    
-    
-  }
+   }
 
 
   return (

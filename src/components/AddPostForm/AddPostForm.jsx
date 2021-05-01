@@ -33,8 +33,7 @@ export default function AddPostForm(props){
     e.preventDefault()
     console.log('is handlesUbmit being called?')
 
-    // Why do we need to create FormData
-    // what type of request are we making?
+   //making FormData for post request
     const formData = new FormData()
     formData.append('photo', selectedFile)
     formData.append('item', state.item)
@@ -43,7 +42,6 @@ export default function AddPostForm(props){
     formData.append('year', state.year)
     formData.append('description', state.description)
     
-    // Have to submit the form now! We need a function!
     props.handleAddPost(formData)
     setState(initialState)
    }

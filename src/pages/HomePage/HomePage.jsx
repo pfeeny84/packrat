@@ -13,8 +13,6 @@ export default function Home({user, handleLogout}){
     
     const [posts, setPosts] = useState([]);
 
-    // Whereever your state is you'll probably 
-    // have an api function defined in the same component that will end updating the state
 
     async function addLike(postId){
       try {
@@ -95,9 +93,5 @@ export default function Home({user, handleLogout}){
           </Grid.Column>
         </Grid.Row>
     </Grid>
-          
-             
-    
-      
-      )
+  );
 }

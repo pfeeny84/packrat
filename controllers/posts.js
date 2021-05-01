@@ -14,7 +14,7 @@ module.exports = {
 
 function create(req, res){
     // confirm we access to our multipart/formdata request
-    console.log(req.body, req.file, req.user, "<req.user is being assinged in the config/auth middleware");
+    // console.log(req.body, req.file, req.user, "<req.user is being assinged in the config/auth middleware");
 
 
     try {
@@ -22,7 +22,7 @@ function create(req, res){
         const params = { Bucket: BUCKET_NAME, Key: filePath, Body: req.file.buffer }
 
         s3.upload(params, async function(err, data) {
-            // use our model to create a post
+            // using post model to create a post
             // The data object is the response from aws, 
             // its the callback function to upload
             const post = await Post.create({
@@ -40,11 +40,8 @@ function create(req, res){
             // on a document you have to call execPopulate()
             
             const populatedPost = await post.populate('user').execPopulate();
-            // userSchema.set('toObject') gets invoked, to delete the password
-            // when we populate the user so we don't have to worry about sending over the password!
-
-
-            // tells the client, success create worked
+            
+    // tells the client, success create worked
             res.status(201).json({post: populatedPost})
         })
 
@@ -58,10 +55,8 @@ function create(req, res){
 async function index(req, res){
     try {
 
-        // on a query aka .find({}) you just call .exec() to execulate the .populate('user')
+        // on a query aka .find({}) call .exec() to execulate the .populate('user')
         const posts = await Post.find({}).populate('user').exec()
-        // userSchema.set('toObject') gets invoked, to delete the password
-        // when we populate the user so we don't have to worry about sending over the password!
         res.status(200).json({posts})
     } catch(err){
         res.json(err)

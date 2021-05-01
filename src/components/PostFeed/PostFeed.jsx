@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card , Segment, Divider } from 'semantic-ui-react'
-import { deletePost } from '../../utils/post-api';
 import PostCard from '../PostCard/PostCard';
 
 

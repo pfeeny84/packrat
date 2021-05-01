@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
   email: {type: String, required: true, lowercase: true, unique: true},
   password: String,
   bio: String,
-  photoUrl: String  // string from aws!
+  photoUrl: String  // from aws
   
 }, {
   timestamps: true
@@ -16,14 +16,11 @@ const userSchema = new mongoose.Schema({
 
 userSchema.set('toJSON', {
   transform: function(doc, ret) {
-    // remove the password property when serializing doc to JSON
     delete ret.password;
     return ret;
   }
 });
-/// in controller
 
-// this is if you populate the user
 userSchema.set('toObject', {
   transform: (doc, ret, opt) => {
    delete ret.password;
@@ -32,8 +29,6 @@ userSchema.set('toObject', {
 });
 
 
-// DO NOT DEFINE instance methods with arrow functions, 
-// they prevent the binding of this
 userSchema.pre('save', function(next) {
   // 'this' will be set to the current document
   const user = this;
@@ -51,7 +46,7 @@ userSchema.pre('save', function(next) {
 
 userSchema.methods.comparePassword = function(tryPassword, cb) {
     console.log(cb, ' this is cb')
-  // 'this' represents the document that you called comparePassword on
+  // 'this' represents the document called comparePassword 
   bcrypt.compare(tryPassword, this.password, function(err, isMatch) {
     if (err) return cb(err);
 

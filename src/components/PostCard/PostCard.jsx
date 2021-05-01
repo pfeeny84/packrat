@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Card, Icon, Image, Feed, CardDescription } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 

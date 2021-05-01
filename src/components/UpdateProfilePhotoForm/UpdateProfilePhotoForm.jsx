@@ -15,11 +15,10 @@ console.log(props)
   function handleSubmit(e){
     e.preventDefault()
     console.log('is handlesUbmit being called?')
-    // Why do we need to create FormData
-    // what type of request are we making?
+    // creating FormData for Put request
     const formData = new FormData()
     formData.append('photo', selectedFile)
-    // Have to submit the form now! We need a function!
+    // submit function
     props.handleUpdateProfilePhoto(formData);
   }
   return (

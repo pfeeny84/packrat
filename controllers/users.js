@@ -93,7 +93,6 @@ function updateProfilePhoto(req, res){
       const token = createJWT(updatedUser); // user is the payload so this is the object in our jwt
       res.json({ token });
     } catch (err) {
-      // Probably a duplicate email
       console.log(err);
       res.status(400).json(err);
     }

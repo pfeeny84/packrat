@@ -2,7 +2,9 @@
 
 PackRat is a user based web app that lets you post images of your music gear collection and see other user's collections. Users can sign up, log in, and post the items in their collection. They can view all posts in a feed on the homepage and navigate to any user page to see and interact with that users collection. 
 
-![alt text](https://i.imgur.com/9SNDgSb.jpg)
+![alt text](https://i.imgur.com/Gq4lnNt.png)
+![alt text](https://i.imgur.com/VKUFDmZ.jpg)
+![alt text](https://i.imgur.com/DqswkRH.png)
 ### Technologies Used
 - Javascript, HTML, CSS
 - Node.js, Express.js

@@ -7,8 +7,8 @@ import { Button, Form, Grid, Header, Image,  Segment } from 'semantic-ui-react'
 
 export default function LoginPage(props){
     const [invalidForm, setValidForm] = useState(false);
-    const [error, setError ]          = useState('')
-    const [state, setState]       = useState({
+    const [error, setError ] = useState('')
+    const [state, setState] = useState({
         email: '',
         password: '',
     })

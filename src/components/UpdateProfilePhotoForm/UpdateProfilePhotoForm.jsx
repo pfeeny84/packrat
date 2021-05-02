@@ -46,5 +46,6 @@ console.log(props)
       </Grid.Column>
     </Grid.Row>
     </Grid>
-  ); 
+ 
+ ); 
 }

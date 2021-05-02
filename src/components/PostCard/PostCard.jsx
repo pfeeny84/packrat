@@ -1,15 +1,12 @@
 import React from 'react';
-import { Card, Icon, Image, Feed, CardDescription } from 'semantic-ui-react';
+import { Card, Icon, Image, CardDescription } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 
 
 
 
-function PostCard({post,isProfile, addLike, removeLike, user, setPosts, posts, deletePost }) { 
-
-  // as the logged in the user when I add a like I want the heart to turn red
-  // find out if the logged in user has liked the card
+function PostCard({post,isProfile, addLike, removeLike, user,  deletePost }) { 
 
   const likedIndexNumber = post.likes.findIndex(like => like.username === user.username);
   // if one of the likes in post.likes is has the same username as are logged in user
@@ -18,8 +15,7 @@ function PostCard({post,isProfile, addLike, removeLike, user, setPosts, posts, d
   
   const clickHandler = likedIndexNumber > - 1 ? () => removeLike(post.likes[likedIndexNumber]._id) : () => addLike(post._id);
   const likeColor = likedIndexNumber > -1 ? 'red' : 'grey';
-  // as the logged in the user when I click on the heart and it is red I want 
-  // to remove the like and turn heart grey
+  
 
   return (
    

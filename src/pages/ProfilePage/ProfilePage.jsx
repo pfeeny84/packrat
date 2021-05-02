@@ -55,7 +55,7 @@ export default function ProfilePage({ user, handleLogout, handleSignUpOrLogin  }
     async function handleUpdateProfilePhoto (photo){
         const updatedUser = await userService.updateProfilePhoto(photo);
         handleSignUpOrLogin()
-        // console.log(updatedUser)
+
       }
 
     async function getProfile() {
@@ -63,7 +63,7 @@ export default function ProfilePage({ user, handleLogout, handleSignUpOrLogin  }
         try {
 
             const username = location.pathname.substring(1)
-            // location.pathname returns /jimbo so we need to cut off the / using the js method substring
+            // location.pathname returns /:username so we need to cut off the / using the js method substring
             // This gets the username from the url! 
             console.log(username)
             const data = await userService.getProfile(username);

@@ -22,4 +22,5 @@
 - The ability to search for items in user's collections and filter the main feed. 
 - Implement multiple collection types.
 - The ability to add custom attributes you want to track to items in the user's collection.
+- The ability to add multiple photos for each collection item on the same card. 
 
